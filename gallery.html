@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Zvanična web stranica izložbe slika mlade slikarke — informacije o umetnici, lokaciji i galeriji radova." />
+  <meta name="theme-color" content="#0b0f14" />
+  <title>Slike — Izložba slika — Mlada slikarka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
+
+  <!-- Open Graph (izmeni po potrebi) -->
+  <meta property="og:title" content="Izložba slika — Mlada slikarka" />
+  <meta property="og:description" content="Izložba: Tihe topografije — Mila Jovanović." />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <a class="skip-link" href="#content">Preskoči na sadržaj</a>
+  <nav class="nav">
+    <div class="nav__brand">
+      <a href="index.html" class="brand">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__text">Mila Jovanović</span>
+      </a>
+      <span class="brand__sub">Izložba · Tihe topografije</span>
+    </div>
+
+    <button class="nav__toggle" aria-label="Otvori meni" aria-expanded="false" aria-controls="navMenu">
+      <span class="nav__toggleLine"></span>
+      <span class="nav__toggleLine"></span>
+      <span class="nav__toggleLine"></span>
+    </button>
+
+    <div class="nav__menu" id="navMenu">
+      <a href="index.html" class="nav__link">Početna</a>
+      <a href="artist.html" class="nav__link">O slikarki</a>
+      <a href="location.html" class="nav__link">Lokacija</a>
+      <a href="gallery.html" class="nav__link nav__link--cta">Slike</a>
+    </div>
+  </nav>
+</header>
+
+<main id="content" class="page">
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <div class="kicker">Galerija radova</div>
+          <h1>Slike</h1>
+          <p class="muted">Vertikalni pregled radova sa informacijama sa strane. (Placeholder sadržaj)</p>
+        </div>
+        <div class="section__tools">
+          <label class="search">
+            <span class="search__label">Pretraga</span>
+            <input id="artSearch" type="search" placeholder="Npr. 'Noć' ili '2025'..." autocomplete="off" />
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container artworks">
+      
+      <article class="artwork" id="1" data-title="tiha linija" data-year="2025">
+        <div class="artwork__img">
+          <img loading="lazy" src="https://source.unsplash.com/1200x1600/?abstract,painting,blue" alt="Slika: Tiha linija" />
+        </div>
+        <aside class="artwork__info">
+          <h2 class="artwork__title">Tiha linija</h2>
+          <div class="artwork__meta">
+            <div><span class="muted">Godina:</span> <strong>2025</strong></div>
+            <div><span class="muted">Tehnika:</span> <strong>Akril na platnu</strong></div>
+            <div><span class="muted">Dimenzije:</span> <strong>80 × 120 cm</strong></div>
+          </div>
+
+          <div class="tags">
+            <span class="tag">#apstrakcija</span>
+            <span class="tag">#tekstura</span>
+            <span class="tag">#svetlo</span>
+          </div>
+
+          <p class="muted">
+            Kratak opis (TODO): šta posmatrač vidi, koji motiv, koja ideja, kontekst ciklusa.
+          </p>
+
+          <div class="artwork__actions">
+            <button class="btn btn--ghost copy-btn" data-copy="Tiha linija — 2025, Akril na platnu, 80 × 120 cm">Kopiraj opis</button>
+            <a class="btn btn--primary" href="mailto:info@example.com?subject=Upit%20za%20rad%3A%20Tiha linija&body=Zdravo,%0A%0AInteresuje%20me%20rad%20%E2%80%9ETiha linija%E2%80%9C.%20Molim%20za%20informacije%20o%20dostupnosti%20i%20ceni.%0A%0AHvala!" >Upit</a>
+          </div>
+        </aside>
+      </article>
+      
+      <article class="artwork" id="2" data-title="svetlo u slojevima" data-year="2025">
+        <div class="artwork__img">
+          <img loading="lazy" src="https://source.unsplash.com/1200x1600/?abstract,painting,light" alt="Slika: Svetlo u slojevima" />
+        </div>
+        <aside class="artwork__info">
+          <h2 class="artwork__title">Svetlo u slojevima</h2>
+          <div class="artwork__meta">
+            <div><span class="muted">Godina:</span> <strong>2025</strong></div>
+            <div><span class="muted">Tehnika:</span> <strong>Ulje na platnu</strong></div>
+            <div><span class="muted">Dimenzije:</span> <strong>100 × 100 cm</strong></div>
+          </div>
+
+          <div class="tags">
+            <span class="tag">#apstrakcija</span>
+            <span class="tag">#tekstura</span>
+            <span class="tag">#svetlo</span>
+          </div>
+
+          <p class="muted">
+            Kratak opis (TODO): šta posmatrač vidi, koji motiv, koja ideja, kontekst ciklusa.
+          </p>
+
+          <div class="artwork__actions">
+            <button class="btn btn--ghost copy-btn" data-copy="Svetlo u slojevima — 2025, Ulje na platnu, 100 × 100 cm">Kopiraj opis</button>
+            <a class="btn btn--primary" href="mailto:info@example.com?subject=Upit%20za%20rad%3A%20Svetlo u slojevima&body=Zdravo,%0A%0AInteresuje%20me%20rad%20%E2%80%9ESvetlo u slojevima%E2%80%9C.%20Molim%20za%20informacije%20o%20dostupnosti%20i%20ceni.%0A%0AHvala!" >Upit</a>
+          </div>
+        </aside>
+      </article>
+      
+      <article class="artwork" id="3" data-title="grad u magli" data-year="2024">
+        <div class="artwork__img">
+          <img loading="lazy" src="https://source.unsplash.com/1200x1600/?modern,painting,texture" alt="Slika: Grad u magli" />
+        </div>
+        <aside class="artwork__info">
+          <h2 class="artwork__title">Grad u magli</h2>
+          <div class="artwork__meta">
+            <div><span class="muted">Godina:</span> <strong>2024</strong></div>
+            <div><span class="muted">Tehnika:</span> <strong>Mešovita tehnika</strong></div>
+            <div><span class="muted">Dimenzije:</span> <strong>70 × 100 cm</strong></div>
+          </div>
+
+          <div class="tags">
+            <span class="tag">#apstrakcija</span>
+            <span class="tag">#tekstura</span>
+            <span class="tag">#svetlo</span>
+          </div>
+
+          <p class="muted">
+            Kratak opis (TODO): šta posmatrač vidi, koji motiv, koja ideja, kontekst ciklusa.
+          </p>
+
+          <div class="artwork__actions">
+            <button class="btn btn--ghost copy-btn" data-copy="Grad u magli — 2024, Mešovita tehnika, 70 × 100 cm">Kopiraj opis</button>
+            <a class="btn btn--primary" href="mailto:info@example.com?subject=Upit%20za%20rad%3A%20Grad u magli&body=Zdravo,%0A%0AInteresuje%20me%20rad%20%E2%80%9EGrad u magli%E2%80%9C.%20Molim%20za%20informacije%20o%20dostupnosti%20i%20ceni.%0A%0AHvala!" >Upit</a>
+          </div>
+        </aside>
+      </article>
+      
+      <article class="artwork" id="4" data-title="ritam površine" data-year="2024">
+        <div class="artwork__img">
+          <img loading="lazy" src="https://source.unsplash.com/1200x1600/?watercolor,abstract,art" alt="Slika: Ritam površine" />
+        </div>
+        <aside class="artwork__info">
+          <h2 class="artwork__title">Ritam površine</h2>
+          <div class="artwork__meta">
+            <div><span class="muted">Godina:</span> <strong>2024</strong></div>
+            <div><span class="muted">Tehnika:</span> <strong>Akvarel i tuš</strong></div>
+            <div><span class="muted">Dimenzije:</span> <strong>60 × 90 cm</strong></div>
+          </div>
+
+          <div class="tags">
+            <span class="tag">#apstrakcija</span>
+            <span class="tag">#tekstura</span>
+            <span class="tag">#svetlo</span>
+          </div>
+
+          <p class="muted">
+            Kratak opis (TODO): šta posmatrač vidi, koji motiv, koja ideja, kontekst ciklusa.
+          </p>
+
+          <div class="artwork__actions">
+            <button class="btn btn--ghost copy-btn" data-copy="Ritam površine — 2024, Akvarel i tuš, 60 × 90 cm">Kopiraj opis</button>
+            <a class="btn btn--primary" href="mailto:info@example.com?subject=Upit%20za%20rad%3A%20Ritam površine&body=Zdravo,%0A%0AInteresuje%20me%20rad%20%E2%80%9ERitam površine%E2%80%9C.%20Molim%20za%20informacije%20o%20dostupnosti%20i%20ceni.%0A%0AHvala!" >Upit</a>
+          </div>
+        </aside>
+      </article>
+      
+      <article class="artwork" id="5" data-title="noćna karta" data-year="2023">
+        <div class="artwork__img">
+          <img loading="lazy" src="https://source.unsplash.com/1200x1600/?minimal,abstract,painting" alt="Slika: Noćna karta" />
+        </div>
+        <aside class="artwork__info">
+          <h2 class="artwork__title">Noćna karta</h2>
+          <div class="artwork__meta">
+            <div><span class="muted">Godina:</span> <strong>2023</strong></div>
+            <div><span class="muted">Tehnika:</span> <strong>Grafika</strong></div>
+            <div><span class="muted">Dimenzije:</span> <strong>50 × 70 cm</strong></div>
+          </div>
+
+          <div class="tags">
+            <span class="tag">#apstrakcija</span>
+            <span class="tag">#tekstura</span>
+            <span class="tag">#svetlo</span>
+          </div>
+
+          <p class="muted">
+            Kratak opis (TODO): šta posmatrač vidi, koji motiv, koja ideja, kontekst ciklusa.
+          </p>
+
+          <div class="artwork__actions">
+            <button class="btn btn--ghost copy-btn" data-copy="Noćna karta — 2023, Grafika, 50 × 70 cm">Kopiraj opis</button>
+            <a class="btn btn--primary" href="mailto:info@example.com?subject=Upit%20za%20rad%3A%20Noćna karta&body=Zdravo,%0A%0AInteresuje%20me%20rad%20%E2%80%9ENoćna karta%E2%80%9C.%20Molim%20za%20informacije%20o%20dostupnosti%20i%20ceni.%0A%0AHvala!" >Upit</a>
+          </div>
+        </aside>
+      </article>
+      
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <div class="footer__title">Mila Jovanović</div>
+      <div class="muted">Izložba: <strong>Tihe topografije</strong></div>
+      <div class="muted">5–20. april 2026 · Galerija Svetionik</div>
+    </div>
+
+    <div>
+      <div class="footer__label">Kontakt</div>
+      <a class="footer__link" href="mailto:info@example.com">info@example.com</a>
+      <a class="footer__link" href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+    </div>
+
+    <div>
+      <div class="footer__label">Adresa</div>
+      <div class="muted">Knez Mihailova 12, Beograd, Srbija</div>
+      <a class="footer__link" href="location.html">Prikaži mapu</a>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="muted">© Mila Jovanović. Sva prava zadržana.</div>
+    <a class="muted" href="#top">Nazad na vrh ↑</a>
+  </div>
+</footer>
+
+</body>
+</html>

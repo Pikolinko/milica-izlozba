@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Zvanična web stranica izložbe slika mlade slikarke — informacije o umetnici, lokaciji i galeriji radova." />
+  <meta name="theme-color" content="#0b0f14" />
+  <title>Lokacija — Izložba slika — Mlada slikarka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
+
+  <!-- Open Graph (izmeni po potrebi) -->
+  <meta property="og:title" content="Izložba slika — Mlada slikarka" />
+  <meta property="og:description" content="Izložba: Tihe topografije — Mila Jovanović." />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <a class="skip-link" href="#content">Preskoči na sadržaj</a>
+  <nav class="nav">
+    <div class="nav__brand">
+      <a href="index.html" class="brand">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__text">Mila Jovanović</span>
+      </a>
+      <span class="brand__sub">Izložba · Tihe topografije</span>
+    </div>
+
+    <button class="nav__toggle" aria-label="Otvori meni" aria-expanded="false" aria-controls="navMenu">
+      <span class="nav__toggleLine"></span>
+      <span class="nav__toggleLine"></span>
+      <span class="nav__toggleLine"></span>
+    </button>
+
+    <div class="nav__menu" id="navMenu">
+      <a href="index.html" class="nav__link">Početna</a>
+      <a href="artist.html" class="nav__link">O slikarki</a>
+      <a href="location.html" class="nav__link">Lokacija</a>
+      <a href="gallery.html" class="nav__link nav__link--cta">Slike</a>
+    </div>
+  </nav>
+</header>
+
+<main id="content" class="page">
+  <section class="page-hero page-hero--small" style="--hero-image: url('https://source.unsplash.com/1600x900/?gallery,interior');">
+    <div class="container">
+      <div class="kicker">Lokacija</div>
+      <h1>Galerija Svetionik</h1>
+      <p class="lead">Knez Mihailova 12, Beograd, Srbija</p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="https://www.google.com/maps/search/?api=1&query=Galerija%20Svetionik%20Knez%20Mihailova%2012,%20Beograd,%20Srbija" target="_blank" rel="noreferrer">Otvori u Google Maps</a>
+        <a class="btn btn--ghost" href="gallery.html">Pogledaj slike</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div class="panel">
+        <h2>Podaci o izložbi</h2>
+        <dl class="dl">
+          <div>
+            <dt>Naziv</dt>
+            <dd>Tihe topografije</dd>
+          </div>
+          <div>
+            <dt>Umetnica</dt>
+            <dd>Mila Jovanović</dd>
+          </div>
+          <div>
+            <dt>Datumi</dt>
+            <dd>5–20. april 2026</dd>
+          </div>
+          <div>
+            <dt>Otvaranje</dt>
+            <dd>Otvaranje: 5. april 2026 u 19:00</dd>
+          </div>
+          <div>
+            <dt>Radno vreme</dt>
+            <dd>Uto–Ned 12:00–20:00 (ponedeljak zatvoreno)</dd>
+          </div>
+        </dl>
+
+        <h2>Kako doći</h2>
+        <ul class="list">
+          <li>Preporuka: javni prevoz + kratka šetnja (centar).</li>
+          <li>Parking: javne garaže u okolini (proveri dostupnost).</li>
+          <li>Pristupačnost: TODO (dodaj info o ulazu, liftu, rampi).</li>
+        </ul>
+      </div>
+
+      <div class="map">
+        <iframe
+          title="Mapa lokacije"
+          src="https://www.google.com/maps?q=Galerija%20Svetionik%20Knez%20Mihailova%2012,%20Beograd,%20Srbija&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          aria-label="Google mapa lokacije galerije">
+        </iframe>
+        <div class="caption muted">
+          Mapa je ugrađena preko javnog embed prikaza (bez API ključa). Ako želiš naprednije opcije, koristi Google Maps Embed API.
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <div class="footer__title">Mila Jovanović</div>
+      <div class="muted">Izložba: <strong>Tihe topografije</strong></div>
+      <div class="muted">5–20. april 2026 · Galerija Svetionik</div>
+    </div>
+
+    <div>
+      <div class="footer__label">Kontakt</div>
+      <a class="footer__link" href="mailto:info@example.com">info@example.com</a>
+      <a class="footer__link" href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+    </div>
+
+    <div>
+      <div class="footer__label">Adresa</div>
+      <div class="muted">Knez Mihailova 12, Beograd, Srbija</div>
+      <a class="footer__link" href="location.html">Prikaži mapu</a>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="muted">© Mila Jovanović. Sva prava zadržana.</div>
+    <a class="muted" href="#top">Nazad na vrh ↑</a>
+  </div>
+</footer>
+
+</body>
+</html>
