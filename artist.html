@@ -3,35 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Zvanična web stranica izložbe slika mlade slikarke — informacije o umetnici, lokaciji i galeriji radova." />
-  <meta name="theme-color" content="#0b0f14" />
-  <title>O slikarki — Izložba slika — Mlada slikarka</title>
-  <link rel="icon" type="slike/png" href="slike/icon.png" />
+
+  <title>Milica Novaković — O meni</title>
+  <meta name="description" content="O slikarki Milici Novaković — biografija, umetnički rad, tehnika i profesionalni put." />
+  <meta name="theme-color" content="#f4f1eb" />
+
+  <link rel="icon" type="image/png" href="slike/icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/css/style.css" />
   <script defer src="assets/js/main.js"></script>
 
-  <!-- Open Graph (izmeni po potrebi) -->
-  <meta property="og:title" content="Izložba slika — Mlada slikarka" />
-  <meta property="og:description" content="Izložba: Tihe topografije — Milica Novaković." />
+  <meta property="og:title" content="Milica Novaković — O meni" />
+  <meta property="og:description" content="Priča o slikarki Milici Novaković, njenom radu, tehnici i stvaralačkom putu." />
   <meta property="og:type" content="website" />
 </head>
-<body>
+
+<body class="gallery-page artist-page">
 
 <header class="site-header" id="top">
   <a class="skip-link" href="#content">Preskoči na sadržaj</a>
-  <nav class="nav">
-    <div class="nav__brand">
-      <a href="index.html" class="brand">
-        <span class="brand__dot" aria-hidden="true"></span>
-        <span class="brand__text">Milica Novaković</span>
-      </a>
-      <span class="brand__sub">Izložba · Tihe topografije</span>
-    </div>
 
-    <button class="nav__toggle" aria-label="Otvori meni" aria-expanded="false" aria-controls="navMenu">
+  <nav class="nav" aria-label="Glavna navigacija">
+    <a href="index.html" class="brand" aria-label="Milica Novaković — početna">
+      <img class="brand__logo" src="slike/logo.png" alt="" width="48" height="48" />
+      <span class="brand__text">MILICA NOVAKOVIĆ</span>
+    </a>
+
+    <button class="nav__toggle" type="button" aria-label="Otvori meni" aria-expanded="false" aria-controls="navMenu">
       <span class="nav__toggleLine"></span>
       <span class="nav__toggleLine"></span>
       <span class="nav__toggleLine"></span>
@@ -39,103 +40,196 @@
 
     <div class="nav__menu" id="navMenu">
       <a href="index.html" class="nav__link">Početna</a>
-      <a href="artist.html" class="nav__link">O slikarki</a>
-      <a href="location.html" class="nav__link">Lokacija</a>
-      <a href="gallery.html" class="nav__link nav__link--cta">Slike</a>
+      <a href="gallery.html" class="nav__link">Radovi</a>
+      <a href="artist.html" class="nav__link is-active" aria-current="page">O meni</a>
+      <a href="events.html" class="nav__link">Događaji</a>
+      <a href="bags.html" class="nav__link">Art torbe</a>
+      <a href="contact.html" class="nav__link">Kontakt</a>
     </div>
   </nav>
 </header>
 
-<main id="content" class="page">
-  <section class="page-hero">
-    <div class="container page-hero__grid">
-      <div>
-        <div class="kicker">Umetnica</div>
-        <h1>Milica Novaković</h1>
-        <p class="lead">
-          Slikarstvo koje spaja apstrakciju i „topografiju” — mapiranje doživljaja kroz boju, teksturu i ritam poteza.
+<main id="content">
+
+  <!-- HERO -->
+  <section class="artist-hero">
+    <div class="container artist-hero__grid">
+      <div class="artist-hero__copy">
+        <p class="section-kicker">O umetnici</p>
+        <h1>Milica<br>Novaković</h1>
+        <p class="artist-hero__statement">
+          Slikarstvo kao način beleženja sveta.
+        </p>
+      </div>
+
+      <figure class="artist-hero__portrait">
+        <img src="slike/milica.jpg" alt="Milica Novaković" fetchpriority="high" />
+      </figure>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="artist-intro">
+    <div class="container artist-intro__grid">
+      <p class="artist-intro__number">01</p>
+
+      <div class="artist-intro__title">
+        <p class="section-kicker">O meni</p>
+        <h2>Put koji spaja obrazovanje, rad sa decom i slikarstvo.</h2>
+      </div>
+
+      <div class="artist-intro__text">
+        <p>
+          Milica Novaković je završila Višu pedagošku školu i diplomirala likovne nauke
+          sa temom „Likovno opažanje u srednjoškolskom uzrastu“.
         </p>
 
-        <div class="facts">
-          <div class="fact">
-            <div class="fact__label">Rođena</div>
-            <div class="fact__value">1981 · Beograd</div>
+        <p>
+          Kasnije završava osnovne strukovne studije prvog stepena na studijskom programu
+          vaspitač dece predškolskog uzrasta na Visokoj školi strukovnih studija za
+          obrazovanje vaspitača u Kikindi.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 MOJ RAD -->
+  <section class="artist-story">
+    <div class="container artist-story__grid">
+      <div class="artist-story__index">
+        <span>02</span>
+        <span class="artist-story__label">Moj rad</span>
+      </div>
+
+      <div class="artist-story__body">
+        <h2>Slikarstvo kao stalna nit.</h2>
+
+        <div class="artist-story__columns">
+          <p>
+            Od 2015. do 2024. godine Milica je živela i radila u struci u inostranstvu.
+            Po povratku u Beograd nastavlja profesionalni rad u predškolskoj ustanovi
+            „Dečiji dani“, gde je ranije i započela svoj vaspitački put.
+          </p>
+
+          <p>
+            Ljubav prema slikarstvu povezivala je i sa radom sa decom — prikupljajući
+            njihove likovne radove i spajajući ih u zajedničke kompozicije. Deo tih radova
+            i danas se nalazi u centralnom vrtiću.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 TEHNIKA -->
+  <section class="artist-tech">
+    <div class="container artist-story__grid">
+      <div class="artist-story__index">
+        <span>03</span>
+        <span class="artist-story__label">Tehnika</span>
+      </div>
+
+      <div class="artist-story__body">
+        <h2>Ulje na platnu.</h2>
+
+        <div class="artist-tech__list">
+          <div class="artist-tech__row">
+            <span>Primarna tehnika</span>
+            <strong>Ulje na platnu</strong>
           </div>
-          <div class="fact">
-            <div class="fact__label">Mediji</div>
-            <div class="fact__value">Akril · Ulje · Mešovite tehnike</div>
+
+          <div class="artist-tech__row">
+            <span>Formati</span>
+            <strong>Različite dimenzije i proporcije</strong>
           </div>
-          <div class="fact">
-            <div class="fact__label">Kontakt</div>
-            <div class="fact__value"><a class="text-link" href="mailto:pikolinko@live.com">pikolinko@live.com</a></div>
+
+          <div class="artist-tech__row">
+            <span>Radovi</span>
+            <a href="gallery.html">Pogledaj galeriju <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="page-hero__media">
-        <img src="slike/artist.jpg" alt="Portret umetnice" loading="lazy" />
-        <div class="caption muted">Milica Novaković.</div>
+  <!-- 04 PUT I ISKUSTVO -->
+  <section class="artist-path">
+    <div class="container artist-story__grid">
+      <div class="artist-story__index">
+        <span>04</span>
+        <span class="artist-story__label">Put i iskustvo</span>
+      </div>
+
+      <div class="artist-story__body">
+        <h2>Hronologija.</h2>
+
+        <div class="artist-timeline">
+          <div class="artist-timeline__row">
+            <div class="artist-timeline__year">Obrazovanje</div>
+            <div>
+              <strong>Likovne nauke i pedagoško obrazovanje</strong>
+              <p>Viša pedagoška škola i stručne studije za obrazovanje vaspitača.</p>
+            </div>
+          </div>
+
+          <div class="artist-timeline__row">
+            <div class="artist-timeline__year">2015–2024</div>
+            <div>
+              <strong>Život i rad u inostranstvu</strong>
+              <p>Profesionalni rad u struci van Srbije.</p>
+            </div>
+          </div>
+
+          <div class="artist-timeline__row">
+            <div class="artist-timeline__year">2024</div>
+            <div>
+              <strong>Povratak u Beograd</strong>
+              <p>Nastavak rada u predškolskoj ustanovi „Dečiji dani“ i nastavak umetničkog stvaralaštva.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="artist-path__note">
+          <p>
+            Hronologiju samostalnih i grupnih izložbi dodaćemo kada budu potvrđeni tačni nazivi,
+            godine i lokacije, kako na sajtu ne bi stajali privremeni ili izmišljeni podaci.
+          </p>
+          <a class="text-link" href="events.html">Događaji <span aria-hidden="true">→</span></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container prose">
-      <h2>Biografija</h2>
-      <p>
-        <b>Milica Novaković</b> (Beograd, 1981) je završila Višu Pedagošku školu i diplomirala likovne nauke 
-		sa temom: „Likovno opažanje u orednjoškolskom uzrastu. Kasnije završava Osnovne Strukovne Studije prvog stepena na 
-		studijskom programu vaspitač dece pred- školskog uzrasta na Visokoj školi strukovnih studija za obrazovanje vaspitača u Kikindi.
-      </p>
-      <p>
-		Živela je i radila u struci u inostranstvu od 2015. godine do 2024. Vraća se u rodni Beograd i ostvaruje radni odnos 
-		u predškolskoj ustanovi ,Dečiji Dani", gde je i započela svoje vaspitačke korake. Uspeva kroz posao da ostvari 
-		svoju ljubav ka slikarst- vu tako što je prikupljala dečije radove i sklapala ih u jednu kompoziciju. 
-		Ti isti radovi se i danas nalaze u centralnom vrtiću.
-	  </p>
-
-      <div class="callout">
-        <h3>Izabrana izjava umetnice</h3>
-        <p>
-          „Ne slikam mesta kakva jesu, već kakva ostaju nakon prolaska — kao mapa koju pamtimo zatvorenih očiju.”
-        </p>
-      </div>
-
-      <h2>CV (placeholder)</h2>
-      <ul>
-        <li>2026 — Samostalna izložba, Galerija Svetionik, Beograd</li>
-        <li>2025 — Grupna izložba (selektovani radovi), Novi Sad</li>
-        <li>2024 — Rezidencija (placeholder), „Studio Program”, Ljubljana</li>
-      </ul>
-      <p class="muted">TODO: Zameni stvarnim podacima, linkovima i izložbama.</p>
-    </div>
-  </section>
 </main>
 
 <footer class="footer">
   <div class="container footer__grid">
-    <div>
+    <div class="footer__identity">
       <div class="footer__title">Milica Novaković</div>
-      <div class="muted">Izložba: <strong>Tihe topografije</strong></div>
-      <div class="muted">5–20. april 2026 · Galerija Svetionik</div>
+      <div class="muted">Slikarstvo</div>
+    </div>
+
+    <div>
+      <div class="footer__label">Navigacija</div>
+      <nav class="footer__nav" aria-label="Navigacija u podnožju">
+        <a class="footer__link" href="gallery.html">Radovi</a>
+        <a class="footer__link" href="artist.html">O meni</a>
+        <a class="footer__link" href="events.html">Događaji</a>
+        <a class="footer__link" href="bags.html">Art torbe</a>
+        <a class="footer__link" href="contact.html">Kontakt</a>
+      </nav>
     </div>
 
     <div>
       <div class="footer__label">Kontakt</div>
-      <a class="footer__link" href="mailto:pikolinko@live.com">pikolinko@ľive.com</a>
-      <a class="footer__link" href="https://instagram.com/novakovic__miroslav/" target="_blank" rel="noreferrer">Instagram</a>
-    </div>
-
-    <div>
-      <div class="footer__label">Adresa</div>
-      <div class="muted">Knez Mihailova 12, Beograd, Srbija</div>
-      <a class="footer__link" href="location.html">Prikaži mapu</a>
+      <a class="footer__link" href="mailto:milicanova.art@gmail.com">milicanova.art@gmail.com</a>
+      <a class="footer__link" href="https://instagram.com/milicanova.art/" target="_blank" rel="noreferrer">Instagram</a>
     </div>
   </div>
 
   <div class="footer__bottom">
     <div class="muted">© Milica Novaković. Sva prava zadržana.</div>
-    <a class="muted" href="#top">Nazad na vrh ↑</a>
+    <a class="muted footer__top-link" href="#top">Nazad na vrh ↑</a>
   </div>
 </footer>
 

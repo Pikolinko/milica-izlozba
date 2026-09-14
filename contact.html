@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Milica Novaković — Kontakt</title>
+  <meta name="description" content="Kontaktirajte slikarku Milicu Novaković za kupovinu radova, izložbe, saradnju i dodatne informacije." />
+  <meta name="theme-color" content="#f4f1eb" />
+
+  <link rel="icon" type="image/png" href="slike/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
+
+  <meta property="og:title" content="Milica Novaković — Kontakt" />
+  <meta property="og:description" content="Kontakt za kupovinu radova, izložbe i saradnju." />
+  <meta property="og:type" content="website" />
+</head>
+
+<body class="gallery-page contact-page">
+
+<header class="site-header" id="top">
+  <a class="skip-link" href="#content">Preskoči na sadržaj</a>
+
+  <nav class="nav" aria-label="Glavna navigacija">
+    <a href="index.html" class="brand" aria-label="Milica Novaković — početna">
+      <img class="brand__logo" src="slike/logo.png" alt="" width="48" height="48" />
+      <span class="brand__text">MILICA NOVAKOVIĆ</span>
+    </a>
+
+    <button class="nav__toggle" type="button" aria-label="Otvori meni" aria-expanded="false" aria-controls="navMenu">
+      <span class="nav__toggleLine"></span>
+      <span class="nav__toggleLine"></span>
+      <span class="nav__toggleLine"></span>
+    </button>
+
+    <div class="nav__menu" id="navMenu">
+      <a href="index.html" class="nav__link">Početna</a>
+      <a href="gallery.html" class="nav__link">Radovi</a>
+      <a href="artist.html" class="nav__link">O meni</a>
+      <a href="events.html" class="nav__link">Događaji</a>
+      <a href="bags.html" class="nav__link">Art torbe</a>
+      <a href="contact.html" class="nav__link is-active" aria-current="page">Kontakt</a>
+    </div>
+  </nav>
+</header>
+
+<main id="content">
+
+  <!-- HERO -->
+  <section class="contact-hero">
+    <div class="container contact-hero__grid">
+      <div class="contact-hero__copy">
+        <p class="section-kicker">Kontakt</p>
+        <h1>Hajde da razgovaramo o umetnosti.</h1>
+        <p class="contact-hero__lead">
+          Za kupovinu radova, izložbe, umetničke projekte i saradnju.
+        </p>
+      </div>
+
+      <figure class="contact-hero__media">
+        <img src="slike/contact-atelje.jpg" alt="Detalj umetničkog ateljea" fetchpriority="high" />
+      </figure>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-main">
+    <div class="container contact-main__grid">
+
+      <div class="contact-info">
+        <p class="contact-section-number">01</p>
+        <p class="section-kicker">Direktan kontakt</p>
+
+        <div class="contact-info__links">
+          <div class="contact-info__row">
+            <span>Email</span>
+            <a href="mailto:milicanova.art@gmail.com">milicanova.art@gmail.com</a>
+          </div>
+
+          <div class="contact-info__row">
+            <span>Instagram</span>
+            <a href="https://instagram.com/milicanova.art/" target="_blank" rel="noreferrer">@milicanova.art</a>
+          </div>
+        </div>
+
+        <div class="contact-info__note">
+          <p>
+            Za informacije o dostupnosti radova, art torbama, izložbama ili mogućoj saradnji,
+            možete se javiti direktno putem emaila ili poslati poruku kroz formu.
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <p class="contact-section-number">02</p>
+        <p class="section-kicker">Pošaljite poruku</p>
+
+        <form
+          class="contact-form"
+          action="mailto:milicanova.art@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <div class="contact-form__field">
+            <label for="contact-name">Ime</label>
+            <input
+              id="contact-name"
+              name="Ime"
+              type="text"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="contact-form__field">
+            <label for="contact-email">Email</label>
+            <input
+              id="contact-email"
+              name="Email"
+              type="email"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="contact-form__field">
+            <label for="contact-subject">Tema</label>
+            <select id="contact-subject" name="Tema">
+              <option value="Kupovina rada">Kupovina rada</option>
+              <option value="Art torbe">Art torbe</option>
+              <option value="Izložba">Izložba</option>
+              <option value="Saradnja">Saradnja</option>
+              <option value="Drugo">Drugo</option>
+            </select>
+          </div>
+
+          <div class="contact-form__field">
+            <label for="contact-message">Poruka</label>
+            <textarea
+              id="contact-message"
+              name="Poruka"
+              rows="7"
+              required
+            ></textarea>
+          </div>
+
+          <button class="contact-form__submit" type="submit">
+            Pošalji <span aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <p class="contact-form__hint">
+          Klik na „Pošalji“ otvara podrazumevanu email aplikaciju na uređaju.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__identity">
+      <div class="footer__title">Milica Novaković</div>
+      <div class="muted">Slikarstvo</div>
+    </div>
+
+    <div>
+      <div class="footer__label">Navigacija</div>
+      <nav class="footer__nav" aria-label="Navigacija u podnožju">
+        <a class="footer__link" href="gallery.html">Radovi</a>
+        <a class="footer__link" href="artist.html">O meni</a>
+        <a class="footer__link" href="events.html">Događaji</a>
+        <a class="footer__link" href="bags.html">Art torbe</a>
+        <a class="footer__link" href="contact.html">Kontakt</a>
+      </nav>
+    </div>
+
+    <div>
+      <div class="footer__label">Kontakt</div>
+      <a class="footer__link" href="mailto:milicanova.art@gmail.com">milicanova.art@gmail.com</a>
+      <a class="footer__link" href="https://instagram.com/milicanova.art/" target="_blank" rel="noreferrer">Instagram</a>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="muted">© Milica Novaković. Sva prava zadržana.</div>
+    <a class="muted footer__top-link" href="#top">Nazad na vrh ↑</a>
+  </div>
+</footer>
+
+</body>
+</html>
