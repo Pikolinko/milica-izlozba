@@ -2002,6 +2002,49 @@ body{ overflow-x: hidden; }
   font-weight: 500;
 }
 
+/* Exhibition catalogue */
+.event-catalog{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.event-catalog__title{
+  color: #3d332c;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s ease, opacity .2s ease;
+}
+
+.event-catalog__title:hover{
+  border-bottom-color: currentColor;
+  opacity: .76;
+}
+
+.event-catalog__download{
+  display: inline-flex;
+  align-items: center;
+  gap: .45em;
+  width: fit-content;
+  padding: .55rem .78rem;
+  border: 1px solid rgba(55,42,32,.30);
+  background: rgba(255,255,255,.20);
+  color: var(--gallery-text);
+  font-size: .70rem;
+  font-weight: 600;
+  letter-spacing: .10em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.event-catalog__download:hover{
+  background: rgba(255,255,255,.54);
+  transform: translateY(-1px);
+}
+
 .events-page .text-link{
   display: inline-flex;
   align-items: center;
@@ -2151,6 +2194,16 @@ body{ overflow-x: hidden; }
   .event-details > div{
     grid-template-columns: 80px minmax(0, 1fr);
     gap: 1rem;
+  }
+
+  .event-catalog{
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .75rem;
+  }
+
+  .event-catalog__download{
+    max-width: 100%;
   }
 
   .events-archive{
