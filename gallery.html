@@ -17,6 +17,127 @@
   <meta property="og:title" content="Milica Novaković — Radovi" />
   <meta property="og:description" content="Galerija odabranih i dostupnih radova slikarke Milice Novaković." />
   <meta property="og:type" content="website" />
+
+  <style>
+    .artwork-status {
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .gallery-artwork__media img {
+      cursor: zoom-in;
+    }
+
+    .gallery-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, .94);
+      padding: 2rem 4.5rem 3.5rem;
+    }
+
+    .gallery-lightbox.is-open { display: flex; }
+
+    .gallery-lightbox__figure {
+      margin: 0;
+      max-width: 100%;
+      max-height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .8rem;
+    }
+
+    .gallery-lightbox__image {
+      display: block;
+      max-width: 92vw;
+      max-height: 84vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .gallery-lightbox__caption {
+      color: rgba(255,255,255,.86);
+      font: 400 .95rem/1.4 Inter, Arial, sans-serif;
+      letter-spacing: .02em;
+      text-align: center;
+    }
+
+    .gallery-lightbox__close,
+    .gallery-lightbox__nav {
+      position: absolute;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      line-height: 1;
+      opacity: .82;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .gallery-lightbox__close:hover,
+    .gallery-lightbox__nav:hover,
+    .gallery-lightbox__close:focus-visible,
+    .gallery-lightbox__nav:focus-visible {
+      opacity: 1;
+    }
+
+    .gallery-lightbox__close {
+      top: 1rem;
+      right: 1.2rem;
+      width: 48px;
+      height: 48px;
+      font-size: 2.2rem;
+    }
+
+    .gallery-lightbox__nav {
+      top: 50%;
+      width: 56px;
+      height: 72px;
+      margin-top: -36px;
+      font-size: 3.4rem;
+    }
+
+    .gallery-lightbox__nav--prev { left: .4rem; }
+    .gallery-lightbox__nav--next { right: .4rem; }
+
+    .gallery-lightbox__nav:hover { transform: scale(1.06); }
+
+    body.lightbox-open { overflow: hidden; }
+
+    @media (max-width: 700px) {
+      .gallery-lightbox { padding: 3.5rem 1rem 4rem; }
+      .gallery-lightbox__image {
+        max-width: 96vw;
+        max-height: 76vh;
+      }
+      .gallery-lightbox__nav {
+        top: auto;
+        bottom: .5rem;
+        width: 64px;
+        height: 56px;
+        margin-top: 0;
+        font-size: 3rem;
+      }
+      .gallery-lightbox__nav--prev { left: 18%; }
+      .gallery-lightbox__nav--next { right: 18%; }
+      .gallery-lightbox__close {
+        top: .35rem;
+        right: .45rem;
+        width: 52px;
+        height: 52px;
+      }
+    }
+  </style>
+
 </head>
 <body class="gallery-page">
 
@@ -59,7 +180,7 @@
         <label class="gallery-search" for="artSearch">
           <span class="gallery-search__label">Pretraži radove</span>
           <span class="gallery-search__field">
-            <input id="artSearch" type="search" placeholder="Naziv ili godina…" autocomplete="off" />
+            <input id="artSearch" type="search" placeholder="Naziv, godina ili dostupnost…" autocomplete="off" />
             <span aria-hidden="true">⌕</span>
           </span>
         </label>
@@ -69,7 +190,7 @@
 
   <section class="gallery-list-section" aria-label="Galerija radova">
     <div class="container artworks gallery-artworks">
-      <article class="artwork gallery-artwork" id="1" data-title="ruka spasa I" data-year="2023/2024">
+      <article class="artwork gallery-artwork" id="1" data-title="ruka spasa I" data-year="2023/2024" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika1.jpg" alt="Slika: Ruka spasa I" />
         </div>
@@ -82,15 +203,16 @@
             <div><dt>Godina</dt><dd>2023/2024</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>60 × 90 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
             <button class="btn gallery-btn gallery-btn--ghost copy-btn" type="button" data-copy="Ruka spasa I — 2023/2024, Ulje na platnu, 60 × 90 cm">Kopiraj opis</button>
-            <a class="btn gallery-btn gallery-btn--primary" href="mailto:milicanova.art@gmail.com?subject=Upit%20za%20rad%3A%20Ruka%20spasa&amp;body=Zdravo%2C%0A%0AInteresuje%20me%20rad%20%E2%80%9ERuka%20spasa%E2%80%9C.%20Molim%20za%20informacije%20o%20dostupnosti%20i%20ceni.%0A%0AHvala%21">Upit</a>
+            <a class="btn gallery-btn gallery-btn--primary" href="mailto:milicanova.art@gmail.com?subject=Upit%20za%20rad%3A%20Ruka%20spasa%20I&amp;body=Zdravo%2C%0A%0AInteresuje%20me%20rad%20%E2%80%9ERuka%20spasa%E2%80%9C.%20Molim%20za%20informacije%20o%20dostupnosti%20i%20ceni.%0A%0AHvala%21">Upit</a>
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="2" data-title="nepokolebljiva" data-year="2023/2024">
+      <article class="artwork gallery-artwork" id="2" data-title="nepokolebljiva" data-year="2023/2024" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika2.jpg" alt="Slika: Nepokolebljiva" />
         </div>
@@ -103,6 +225,7 @@
             <div><dt>Godina</dt><dd>2023/2024</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>40 × 50 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -111,7 +234,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="3" data-title="cirkus života" data-year="2024/2025">
+      <article class="artwork gallery-artwork" id="3" data-title="cirkus života" data-year="2024/2025" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika3.jpg" alt="Slika: Cirkus života" />
         </div>
@@ -124,6 +247,7 @@
             <div><dt>Godina</dt><dd>2024/2025</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>40 × 50 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -132,7 +256,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="4" data-title="igra bez pravila" data-year="2024/2026">
+      <article class="artwork gallery-artwork" id="4" data-title="igra bez pravila" data-year="2024/2026" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika4.jpg" alt="Slika: Igra bez pravila" />
         </div>
@@ -145,6 +269,7 @@
             <div><dt>Godina</dt><dd>2024/2026</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>70 × 80 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -153,7 +278,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="5" data-title="hod u nepoznato" data-year="2022/2024">
+      <article class="artwork gallery-artwork" id="5" data-title="hod u nepoznato" data-year="2022/2024" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika5.jpg" alt="Slika: Hod u nepoznato" />
         </div>
@@ -166,6 +291,7 @@
             <div><dt>Godina</dt><dd>2022/2024</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>40 × 50 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -174,7 +300,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="6" data-title="iluzija" data-year="2023/2024">
+      <article class="artwork gallery-artwork" id="6" data-title="iluzija" data-year="2023/2024" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika6.jpg" alt="Slika: Iluzija" />
         </div>
@@ -187,6 +313,7 @@
             <div><dt>Godina</dt><dd>2023/2024</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>50 × 70 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -195,7 +322,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="7" data-title="zabluda" data-year="2026">
+      <article class="artwork gallery-artwork" id="7" data-title="zabluda" data-year="2026" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika7.jpg" alt="Slika: Zabluda" />
         </div>
@@ -208,6 +335,7 @@
             <div><dt>Godina</dt><dd>2026</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>50 × 70 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -216,7 +344,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="8" data-title="pod tušem tišine" data-year="2024">
+      <article class="artwork gallery-artwork" id="8" data-title="pod tušem tišine" data-year="2024" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika8.jpg" alt="Slika: Pod tušem tišine" />
         </div>
@@ -229,6 +357,7 @@
             <div><dt>Godina</dt><dd>2024</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>50 × 60 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -237,7 +366,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="9" data-title="povratak majke" data-year="2025/2026">
+      <article class="artwork gallery-artwork" id="9" data-title="povratak majke" data-year="2025/2026" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika9.jpg" alt="Slika: Povratak majke" />
         </div>
@@ -250,6 +379,7 @@
             <div><dt>Godina</dt><dd>2025/2026</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>70 × 100 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -258,7 +388,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="10" data-title="Nezaustavljiva" data-year="2024/2025">
+      <article class="artwork gallery-artwork" id="10" data-title="Nezaustavljiva" data-year="2024/2025" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika10.jpg" alt="Slika: Nezaustavljiva" />
         </div>
@@ -271,6 +401,7 @@
             <div><dt>Godina</dt><dd>2024/2025</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>100 × 120 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -279,7 +410,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="11" data-title="poruka mesečini" data-year="2025">
+      <article class="artwork gallery-artwork" id="11" data-title="poruka mesečini" data-year="2025" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika11.jpg" alt="Slika: Poruka mesečini" />
         </div>
@@ -292,6 +423,7 @@
             <div><dt>Godina</dt><dd>2025</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>60 × 80 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -300,7 +432,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="12" data-title="vreme" data-year="2025">
+      <article class="artwork gallery-artwork" id="12" data-title="vreme" data-year="2025" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika12.jpg" alt="Slika: Vreme" />
         </div>
@@ -313,6 +445,7 @@
             <div><dt>Godina</dt><dd>2025</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>70 × 60 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -321,7 +454,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="13" data-title="pogled sa košara i paštrika" data-year="2022/2024">
+      <article class="artwork gallery-artwork" id="13" data-title="pogled sa košara i paštrika" data-year="2022/2024" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika13.jpg" alt="Slika: Rezoluija UN 1244" />
         </div>
@@ -334,6 +467,7 @@
             <div><dt>Godina</dt><dd>2022/2024</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>90 × 90 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -342,7 +476,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="14" data-title="dom" data-year="2025/2026">
+      <article class="artwork gallery-artwork" id="14" data-title="dom" data-year="2025/2026" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika14.jpg" alt="Slika: Dom" />
         </div>
@@ -355,6 +489,7 @@
             <div><dt>Godina</dt><dd>2025/2026</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>70 × 100 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -363,7 +498,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="15" data-title="oslobađanje" data-year="2025/2026">
+      <article class="artwork gallery-artwork" id="15" data-title="oslobađanje" data-year="2025/2026" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika15.jpg" alt="Slika: Oslobađanje" />
         </div>
@@ -376,6 +511,7 @@
             <div><dt>Godina</dt><dd>2025/2026</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>60 × 90 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -384,7 +520,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="16" data-title="sigurnost" data-year="2024">
+      <article class="artwork gallery-artwork" id="16" data-title="sigurnost" data-year="2024" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika16.jpg" alt="Slika: Sigurnost" />
         </div>
@@ -397,6 +533,7 @@
             <div><dt>Godina</dt><dd>2024</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>50 × 70 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -405,7 +542,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="17" data-title="feniks" data-year="2024/2025">
+      <article class="artwork gallery-artwork" id="17" data-title="feniks" data-year="2024/2025" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika17.jpg" alt="Slika: Feniks" />
         </div>
@@ -418,6 +555,7 @@
             <div><dt>Godina</dt><dd>2024/2025</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>60 × 80 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -426,7 +564,7 @@
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="18" data-title="ruka spasa II" data-year="2025/2026">
+      <article class="artwork gallery-artwork" id="18" data-title="ruka spasa II" data-year="2025/2026" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika18.jpg" alt="Slika: Ruka spasa II" />
         </div>
@@ -439,15 +577,16 @@
             <div><dt>Godina</dt><dd>2025/2026</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>40 × 30 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
             <button class="btn gallery-btn gallery-btn--ghost copy-btn" type="button" data-copy="Ruka spasa II — 2025/2026, Ulje na platnu, 40 × 30 cm">Kopiraj opis</button>
-            <a class="btn gallery-btn gallery-btn--primary" href="mailto:milicanova.art@gmail.com?subject=Upit%20za%20rad%3A%20Ruka spasa II&amp;body=Zdravo%2C%0A%0AInteresuje%20me%20rad%20%E2%80%9ESpas%E2%80%9C.%20Molim%20za%20informacije%20o%20dostupnosti%20i%20ceni.%0A%0AHvala%21">Upit</a>
+            <a class="btn gallery-btn gallery-btn--primary" href="mailto:milicanova.art@gmail.com?subject=Upit%20za%20rad%3A%20Ruka%20spasa%20II&amp;body=Zdravo%2C%0A%0AInteresuje%20me%20rad%20%E2%80%9ESpas%E2%80%9C.%20Molim%20za%20informacije%20o%20dostupnosti%20i%20ceni.%0A%0AHvala%21">Upit</a>
           </div>
         </aside>
       </article>
-      <article class="artwork gallery-artwork" id="19" data-title="nepobediva" data-year="2025">
+      <article class="artwork gallery-artwork" id="19" data-title="nepobediva" data-year="2025" data-status="dostupno">
         <div class="artwork__img gallery-artwork__media">
           <img loading="lazy" src="slike/slika19.jpg" alt="Slika: Nepobediva" />
         </div>
@@ -460,6 +599,7 @@
             <div><dt>Godina</dt><dd>2025</dd></div>
             <div><dt>Tehnika</dt><dd>Ulje na platnu</dd></div>
             <div><dt>Dimenzije</dt><dd>30 × 40 cm</dd></div>
+            <div><dt>Dostupnost</dt><dd class="artwork-status">Dostupno</dd></div>
           </dl>
 
           <div class="artwork__actions gallery-artwork__actions">
@@ -471,6 +611,17 @@
     </div>
   </section>
 </main>
+
+
+  <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Prikaz umetničkog dela">
+    <button class="gallery-lightbox__close" type="button" aria-label="Zatvori prikaz">×</button>
+    <button class="gallery-lightbox__nav gallery-lightbox__nav--prev" type="button" aria-label="Prethodna slika">‹</button>
+    <figure class="gallery-lightbox__figure">
+      <img class="gallery-lightbox__image" src="" alt="" />
+      <figcaption class="gallery-lightbox__caption"></figcaption>
+    </figure>
+    <button class="gallery-lightbox__nav gallery-lightbox__nav--next" type="button" aria-label="Sledeća slika">›</button>
+  </div>
 
 <footer class="footer">
   <div class="container footer__grid">
@@ -502,6 +653,123 @@
     <a class="muted footer__top-link" href="#top">Nazad na vrh ↑</a>
   </div>
 </footer>
+
+<script>
+(function () {
+  const articles = Array.from(document.querySelectorAll('.gallery-artwork'));
+  const search = document.getElementById('artSearch');
+
+  if (search) {
+    search.addEventListener('input', function (event) {
+      // Ova stranica proširuje postojeću pretragu i na status dela.
+      // Zaustavljamo eventualni stariji handler iz main.js da ne bi poništio ovaj rezultat.
+      event.stopImmediatePropagation();
+      const query = this.value.trim().toLocaleLowerCase('sr');
+      articles.forEach(function (article) {
+        const haystack = [
+          article.dataset.title || '',
+          article.dataset.year || '',
+          article.dataset.status || '',
+          article.querySelector('.artwork-status')?.textContent || ''
+        ].join(' ').toLocaleLowerCase('sr');
+        article.hidden = query ? !haystack.includes(query) : false;
+      });
+    }, true);
+  }
+
+  const lightbox = document.getElementById('galleryLightbox');
+  if (!lightbox) return;
+
+  const lightboxImage = lightbox.querySelector('.gallery-lightbox__image');
+  const caption = lightbox.querySelector('.gallery-lightbox__caption');
+  const closeBtn = lightbox.querySelector('.gallery-lightbox__close');
+  const prevBtn = lightbox.querySelector('.gallery-lightbox__nav--prev');
+  const nextBtn = lightbox.querySelector('.gallery-lightbox__nav--next');
+
+  const items = articles.map(function (article) {
+    const img = article.querySelector('.gallery-artwork__media img');
+    const title = article.querySelector('.artwork__title')?.textContent.trim() || '';
+    const year = article.dataset.year || '';
+    if (img) {
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', 'Otvori uvećan prikaz: ' + title);
+    }
+    return { article, img, title, year };
+  }).filter(function (item) { return item.img; });
+
+  let currentIndex = 0;
+  let opener = null;
+  let touchStartX = 0;
+
+  function render(index) {
+    currentIndex = (index + items.length) % items.length;
+    const item = items[currentIndex];
+    lightboxImage.src = item.img.currentSrc || item.img.src;
+    lightboxImage.alt = item.img.alt || ('Slika: ' + item.title);
+    caption.textContent = item.year ? item.title + ' · ' + item.year : item.title;
+  }
+
+  function open(index, source) {
+    opener = source || items[index].img;
+    render(index);
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lightbox-open');
+    closeBtn.focus();
+  }
+
+  function close() {
+    if (!lightbox.classList.contains('is-open')) return;
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+    lightboxImage.src = '';
+    if (opener) opener.focus();
+  }
+
+  function next() { render(currentIndex + 1); }
+  function prev() { render(currentIndex - 1); }
+
+  items.forEach(function (item, index) {
+    item.img.addEventListener('click', function () { open(index, item.img); });
+    item.img.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        open(index, item.img);
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  nextBtn.addEventListener('click', next);
+  prevBtn.addEventListener('click', prev);
+
+  lightbox.addEventListener('click', function (event) {
+    if (event.target === lightbox) close();
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (event.key === 'Escape') close();
+    if (event.key === 'ArrowRight') next();
+    if (event.key === 'ArrowLeft') prev();
+  });
+
+  lightbox.addEventListener('touchstart', function (event) {
+    if (event.touches.length === 1) touchStartX = event.touches[0].clientX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', function (event) {
+    if (!touchStartX || !event.changedTouches.length) return;
+    const delta = event.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(delta) > 50) {
+      if (delta < 0) next(); else prev();
+    }
+    touchStartX = 0;
+  }, { passive: true });
+})();
+</script>
 
 </body>
 </html>
